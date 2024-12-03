@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('user', JSON.stringify({ email: user.email }));
 
                 // サインイン完了後に指定のページに遷移
-                window.location.href = 'http://127.0.0.1:5500/Homeサインイン.html';
+                window.location.href = 'https://prime-volleyball-club.github.io/TeamSite/Homeサインイン.html';
             })
             .catch((error) => {
                 alert('サインインエラー: ' + error.message);
