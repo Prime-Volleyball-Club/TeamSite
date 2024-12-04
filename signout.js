@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cancelSignOutButton) {
         cancelSignOutButton.addEventListener('click', () => {
             // キャンセルされた場合、元のページに戻す
-            window.location.href = 'http://127.0.0.1:5500/Homeサインイン.html'; // 戻る先URL
+            window.location.href = 'https://prime-volleyball-club.github.io/TeamSite/Homeサインイン.html'; // 戻る先URL
         });
     }
 });
