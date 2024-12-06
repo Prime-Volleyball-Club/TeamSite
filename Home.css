@@ -146,7 +146,8 @@ main{
 }
 
 .main1{
-  background-color: #b4d2edc0;
+  background-color: black/*#b4d2edc0*/;
+  border: 3px solid #b4d2edc0;
   width: 49.5%;
   height: 500px;
   overflow: auto;
@@ -154,7 +155,8 @@ main{
 }
 
 .main2{
-  background-color: #e3b1d2b0;
+  background-color: black/*#e3b1d2b0*/;
+  border: 3px solid #e3b1d2b0;
   width: 49.5%;
   height: 500px;
   overflow: auto;
@@ -366,7 +368,7 @@ main{
     flex-wrap: wrap;
     flex-wrap: nowrap;
     text-decoration: none;
-    color: orange;
+    color: #917835;
     border-bottom: 1px solid #CCC;
     padding: 20px 20px;
   }
@@ -377,7 +379,7 @@ main{
     margin: 0;
     min-width: 140px;
     font-size: 16px;
-    color: white;
+    color: #917835;
     padding: 0 20px 0 0;
   }
   .news-list .item .category{
@@ -386,7 +388,7 @@ main{
     padding: 0 20px 0 0;
   }
   .news-list .item .category span{
-    background: #999;
+    background: #917835;
     color: #FFF;
     text-align: center;
     display: inline-block;
@@ -545,7 +547,7 @@ main{
 .foot hr {
   height: 1px;
   border: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #917835;
 }
 
 .foot address {
@@ -569,6 +571,7 @@ main{
 .footer__navi-heading {
   font-weight: 600;
   text-align: center;
+  color: #917835;
 }
 
 .footer__logo {
