@@ -85,8 +85,8 @@ li {
   bottom: 50%;
   z-index: 10;
   cursor: pointer;
-  border-top: solid 3px #000;
-  border-right: solid 3px #000;
+  border-top: solid 3px #ffffff;
+  border-right: solid 3px #ffffff;
   -webkit-transform: rotate(45deg) translateY(50%);
   transform: rotate(45deg) translateY(50%);
 }
@@ -98,8 +98,8 @@ li {
   bottom: 50%;
   z-index: 10;
   cursor: pointer;
-  border-top: solid 3px #000;
-  border-right: solid 3px #000;
+  border-top: solid 3px #ffffff;
+  border-right: solid 3px #ffffff;
   -webkit-transform: rotate(-135deg) translateY(-50%);
   transform: rotate(-135deg) translateY(-50%);
 }
