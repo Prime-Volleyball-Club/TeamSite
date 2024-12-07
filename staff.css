@@ -1,0 +1,169 @@
+/* 全体のレイアウト */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #917835;
+}
+
+/* ヘッダー */
+header {
+    width: 100%;
+    background: black;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* メインセクション */
+main {
+    padding: 20px;
+}
+
+/* 役員紹介セクション */
+.executive-profile h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* プロフィールのスタイル */
+.profile {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    width: 250px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.profile-info {
+    padding: 15px;
+}
+
+.profile-info h3 {
+    font-size: 1.4em;
+    color: #917835;
+    margin: 10px 0;
+}
+
+.position {
+    font-size: 1.1em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 1em;
+    color: #000000;
+}
+
+/* フッター */
+.foot{
+    padding-top: 50px;
+    padding-bottom: 25px;
+    background: -moz-linear-gradient(top left, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+    background: -webkit-linear-gradient(top left, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+    background: linear-gradient(to bottom right, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+}
+
+.foot ul {
+    padding: 0;
+    list-style: none;
+}
+
+.foot a {
+    color: #000;
+    text-decoration: none;
+}
+
+.foot a:hover {
+    color: #4b5564;
+}
+
+.foot hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #917835;
+}
+
+.foot address {
+    font-style: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    padding: 2rem;
+    font-size: 15px;
+    color: #4b5564;
+    background: #fff;
+}
+
+.footer__navi-heading {
+    font-weight: 600;
+    text-align: center;
+    color: #917835;
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.footer__navi li {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+.md-flex {
+    display: flex;
+}
+
+.md-justify-between {
+    justify-content: space-between;
+}
+
+.grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+}
+
+.copyright{
+    color: #000;
+    text-align: center;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .profiles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile {
+        width: 90%;
+    }
+}
