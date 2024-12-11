@@ -4,7 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>パスワード再設定</title>
-    <!-- Firebase SDK -->
+    <style>
+        /* 背景色と全体のレイアウト */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* コンテナのスタイル */
+        .container {
+            max-width: 400px;
+            width: 100%; /* 親要素に合わせて100% */
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        input[type="email"] {
+            width: 100%; /* 幅を100%に設定 */
+            padding: 12px 20px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box; /* パディングも考慮して幅を調整 */
+        }
+
+        input[type="email"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            width: 100%; /* 幅を100%に設定 */
+            padding: 12px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>パスワード再設定</h2>
+        <p>パスワードをリセットするには、登録されているメールアドレスを入力してください。</p>
+        <input type="email" id="email" placeholder="メールアドレス" required>
+        <button onclick="resetPassword()">パスワード再設定</button>
+    </div>
+
     <script type="module">
         // Firebaseの設定
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
@@ -32,11 +112,9 @@
                 sendPasswordResetEmail(auth, email)
                     .then(() => {
                         alert('パスワード再設定のリンクを送信しました。メールを確認してください。');
-                        // アラートが閉じられた後、元のページ（リファラURL）に戻る
-                        window.location.href = document.referrer; // 元のページに戻る
+                        window.location.href = document.referrer;
                     })
                     .catch((error) => {
-                        const errorCode = error.code;
                         const errorMessage = error.message;
                         alert('エラー: ' + errorMessage);
                     });
@@ -45,13 +123,5 @@
             }
         }
     </script>
-</head>
-<body>
-    <div style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; text-align: center;">
-        <h2>パスワード再設定</h2>
-        <p>パスワードをリセットするには、登録されているメールアドレスを入力してください。</p>
-        <input type="email" id="email" placeholder="メールアドレス" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc;" required>
-        <button onclick="resetPassword()" style="padding: 10px 20px; border: none; background-color: #4CAF50; color: white; border-radius: 5px; cursor: pointer;">パスワード再設定</button>
-    </div>
 </body>
 </html>
