@@ -32,6 +32,8 @@
                 sendPasswordResetEmail(auth, email)
                     .then(() => {
                         alert('パスワード再設定のリンクを送信しました。メールを確認してください。');
+                        // アラートが閉じられた後、元のページ（リファラURL）に戻る
+                        window.location.href = document.referrer; // 元のページに戻る
                     })
                     .catch((error) => {
                         const errorCode = error.code;
