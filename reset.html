@@ -10,7 +10,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-        // Firebaseを初期化
+        // Firebaseの設定
         const firebaseConfig = {
             apiKey: "AIzaSyAhi_UbbyiWH1GA5r1FIGdi4FTln-HeXMM",
             authDomain: "prime-volleyball-club.firebaseapp.com",
@@ -26,7 +26,7 @@
         const auth = getAuth(app);
 
         // パスワードリセットの関数
-        function resetPassword() {
+        window.resetPassword = function() {
             const email = document.getElementById('email').value;
             if (email) {
                 sendPasswordResetEmail(auth, email)
