@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>パスワード再設定</title>
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script>
+    <script type="module">
         // Firebaseの設定
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        // Firebaseを初期化
         const firebaseConfig = {
             apiKey: "AIzaSyAhi_UbbyiWH1GA5r1FIGdi4FTln-HeXMM",
             authDomain: "prime-volleyball-club.firebaseapp.com",
@@ -20,14 +22,14 @@
         };
 
         // Firebaseを初期化
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.getAuth(app);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
         // パスワードリセットの関数
         function resetPassword() {
             const email = document.getElementById('email').value;
             if (email) {
-                firebase.sendPasswordResetEmail(auth, email)
+                sendPasswordResetEmail(auth, email)
                     .then(() => {
                         alert('パスワード再設定のリンクを送信しました。メールを確認してください。');
                     })
