@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスワード再設定</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script>
+        // Firebaseの設定
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Firebaseを初期化
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.getAuth(app);
+
+        // パスワードリセットの関数
+        function resetPassword() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                firebase.sendPasswordResetEmail(auth, email)
+                    .then(() => {
+                        alert('パスワード再設定のリンクを送信しました。メールを確認してください。');
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert('エラー: ' + errorMessage);
+                    });
+            } else {
+                alert('メールアドレスを入力してください');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; text-align: center;">
+        <h2>パスワード再設定</h2>
+        <p>パスワードをリセットするには、登録されているメールアドレスを入力してください。</p>
+        <input type="email" id="email" placeholder="メールアドレス" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc;" required>
+        <button onclick="resetPassword()" style="padding: 10px 20px; border: none; background-color: #4CAF50; color: white; border-radius: 5px; cursor: pointer;">パスワード再設定</button>
+    </div>
+</body>
+</html>
