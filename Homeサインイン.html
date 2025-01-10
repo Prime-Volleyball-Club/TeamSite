@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="format-detection" content="email=no,telephone=no,address=no">
         <meta http-equiv=”default-style” content=”Home.css”>
-        <link rel="stylesheet" href="Home.css">
+        <link rel="stylesheet" href="Homeサインイン.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
 
@@ -65,34 +65,40 @@
         </div>
     </header>
 
-    <!-- スライドの外枠 -->
-    <div class="slide-wrapper">
-        <!-- スライド（コンテンツ） -->
-        <div id="slide" class="slide">
-            <div>
-              <img src="スライド1.png">
+    <div class="スライド">
+        <!-- スライドの外枠 -->
+        <div class="slide-wrapper">
+            <!-- スライド（コンテンツ） -->
+            <div id="slide" class="slide">
+                <div>
+                <img src="スライド1.png">
+                </div>
+                <div>
+                <img src="スライド4.png">
+                </div>
+                <div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzNEtdX2Cyo7PQhjDFTgHLh-fwdBMlsT5beJZQQDjWmsn8Xg/viewform?usp=sf_link" target="_blank"><img src="スライド2.png"></a>
+                </div>
+                <div>
+                    <img src="集合写真.png">
+                </div>
             </div>
-            <div>
-              <img src="スライド4.png">
-            </div>
-            <div>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzNEtdX2Cyo7PQhjDFTgHLh-fwdBMlsT5beJZQQDjWmsn8Xg/viewform?usp=sf_link" target="_blank"><img src="スライド2.png"></a>
-            </div>
+            <!-- 左右のボタン -->
+            <span id="prev" class="prev"></span>
+            <span id="next" class="next"></span>
+            <!-- インジケーター -->
+            <ul class="indicator" id="indicator">
+            <li class="list"></li>
+            <li class="list"></li>
+            <li class="list"></li>
+            <li class="list"></li>
+            </ul>
         </div>
-        <!-- 左右のボタン -->
-        <span id="prev" class="prev"></span>
-        <span id="next" class="next"></span>
-        <!-- インジケーター -->
-        <ul class="indicator" id="indicator">
-        <li class="list"></li>
-        <li class="list"></li>
-        <li class="list"></li>
-        </ul>
     </div>
 
     <body>
         <div class="maincontents">
-            <main style="padding-top: 60px;">
+            <main>
                 <div class="main1" id="News">
                     <article>
                         <h3 class="border-arrange1">News Room</h3>
@@ -192,7 +198,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-      
+        
         // Firebase設定
         const firebaseConfig = {
             apiKey: "AIzaSyAhi_UbbyiWH1GA5r1FIGdi4FTln-HeXMM",
@@ -215,7 +221,7 @@
                 window.location.href = 'https://prime-volleyball-club.github.io/TeamSite/サインイン.html';
             }
         });
-    </script>      
+    </script>
 
     <script type="text/javascript" src=script.js></script>
 </html>
