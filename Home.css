@@ -29,9 +29,15 @@ header {
 li {
   list-style: none;
 }
+.スライド {
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  margin-top: 2%; /* bodyの余白をなくす */
+}
 /* ↓ スライドの外枠 */
 .slide-wrapper {
-  width: 100%;
+  width: 75%;
   height: auto;
   position: relative;
   overflow: hidden; /* はみ出したスライドを隠す */
@@ -44,7 +50,7 @@ li {
   transition: all 1s;
 }
 .slide div { /* スライド */
-  width: 33.33%;
+  width: 33%;
   height: 100%;
   font-size: 16px;
   display: flex;
@@ -60,15 +66,6 @@ li {
 }
 .slide3 { /* スライドさせるために必要なクラス */
   transform: translateX(-66.66%);
-}
-.slide div:nth-of-type(1){ /* 背景色 */
-  background-color: #E1F3FC;
-}
-.slide div:nth-of-type(2){ /* 背景色 */
-  background-color: #FCE8F0;
-}
-.slide div:nth-of-type(3){ /* 背景色 */
-  background-color: #E3F1E4;
 }
 
 .slide img{
@@ -125,6 +122,7 @@ li {
 }
 .indicator li:first-of-type {
   background-color: #000;
+  border: 2px #fff solid;
 }
 
 body{
@@ -149,7 +147,7 @@ main{
   background-color: black/*#b4d2edc0*/;
   border: 3px solid #b4d2edc0;
   width: 49.5%;
-  height: 500px;
+  height: 95%;
   overflow: auto;
   overflow-y: scroll;
 }
@@ -158,7 +156,7 @@ main{
   background-color: black/*#e3b1d2b0*/;
   border: 3px solid #e3b1d2b0;
   width: 49.5%;
-  height: 500px;
+  height: 95%;
   overflow: auto;
   overflow-y: scroll;
 }
