@@ -1,0 +1,189 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    color: #917835;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('コルクボード.jpg'); /* 画像のパス */
+    background-size: cover; /* 画像を画面全体に合わせて拡大縮小 */
+    background-position: center; /* 画像を中央に配置 */
+    background-attachment: fixed; /* スクロール時に背景が動かないようにする */
+    color: #f0f0f0; /* 明るい文字色 */
+    line-height: 1.6;
+}
+
+/* コンテナ */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 活動方針ボックス */
+.activity {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* sample_box12 */
+.sample_box12 {
+    width: 75%; /* 紙の横幅 */
+    padding: 15px;
+    margin: 2em auto;
+    /* background: #fbc7f5; 紙の色 */
+    color: #000; /* 文字色 */
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
+    transform: rotate(2deg);
+    word-break: break-word;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* 表示された時に「visible」クラスを追加 */
+.sample_box12.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sample_box12 p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+/* テープのデザイン */
+.sample_box12_tape {
+    width: 50%;
+    height: 35px;
+    margin: -25px auto 0;
+    background: rgba(251, 234, 144, 0.5); /* テープの色 */
+    /* transform: rotate(3deg);テープの傾き */
+    opacity: 0.9;
+}
+
+/* タイトル */
+.sample_box12_title {
+    text-align: center;
+    font-size: 1.3em!important;
+    margin-top: 10px!important;
+    color: #fff; /* タイトルの文字色 */
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* サブタイトル */
+.sample_box12_subtitle {
+    text-align: center;
+    font-size: 0.7em!important;
+    margin-bottom: 1em!important;
+    color: purple; /* 薄いグレーの文字 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .sample_box12 {
+        padding: 15px;
+    }
+    .sample_box12_title {
+        font-size: 1.1em;
+    }
+    .sample_box12_subtitle {
+        font-size: 0.6em;
+    }
+    .sample_box12 p {
+        font-size: 0.8em;
+    }
+}
+
+/* フッターのスタイル */
+.foot{
+    padding-top: 50px;
+    padding-bottom: 25px;
+    background: -moz-linear-gradient(top left, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+    background: -webkit-linear-gradient(top left, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+    background: linear-gradient(to bottom right, #84c9ef, #B4D2ED 33%, #E3B1D2); 
+}
+
+.foot ul {
+    padding: 0;
+    list-style: none;
+}
+
+.foot a {
+    color: #000;
+    text-decoration: none;
+}
+
+.foot a:hover {
+    color: #4b5564;
+}
+
+.foot hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #917835;
+}
+
+.foot address {
+    font-style: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    padding: 2rem;
+    font-size: 15px;
+    color: #4b5564;
+    background: #fff;
+}
+
+.footer__navi-heading {
+    font-weight: 600;
+    text-align: center;
+    color: #917835;
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.footer__navi li {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+.md-flex {
+    display: flex;
+}
+
+.md-justify-between {
+    justify-content: space-between;
+}
+
+.grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+}
+
+.copyright{
+    color: #000;
+    text-align: center;
+}
