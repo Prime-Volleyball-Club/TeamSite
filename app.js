@@ -12,32 +12,32 @@ const firebaseConfig = {
     measurementId: "G-GY1566PD0Z"
 };
 
-// Firebaseを初期化
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// DOMが読み込まれた後に実行
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    // サインインフォームの送信処理
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    // 利用規約チェック確認
+    if (!document.getElementById('terms').checked) {
+        alert('利用規約に同意する必要があります。');
+        return;
+    }
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-        // Firebaseでサインイン
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                localStorage.setItem('user', JSON.stringify({ email: user.email }));
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
-                // サインイン完了後に指定のページに遷移
-                window.location.href = 'https://prime-volleyball-club.github.io/TeamSite/Homeサインイン.html';
-            })
-            .catch((error) => {
-                alert('サインインエラー: ' + error.message);
-            });
-    });
+        // ログイン成功時リダイレクト処理
+        const params = new URLSearchParams(window.location.search);
+        const redirectURL = params.get("redirect") || "index.html";
+
+        sessionStorage.setItem("loginSuccess", "true");
+        window.location.href = redirectURL;
+
+    } catch (error) {
+        alert('サインインエラー: ' + error.message);
+    }
 });
