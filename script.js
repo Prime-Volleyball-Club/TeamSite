@@ -83,3 +83,10 @@ const menu = document.getElementById("menu");
 hamburger.addEventListener("click", function() {
     menu.classList.toggle("active");
 });
+
+window.addEventListener("load", () => {
+    if (sessionStorage.getItem("loginSuccess") === "true") {
+        alert("サインインしました");
+        sessionStorage.removeItem("loginSuccess");
+    }
+});
