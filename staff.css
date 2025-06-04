@@ -3,75 +3,98 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #ffffff;
     color: #917835;
 }
 
-/* ヘッダー */
+
+
 header {
-    width: 100%;
-    background: black;
-    text-align: center;
+  text-align: center;
+  background-color: #000000;
+  padding: 30px 15px;
 }
 
-header h1 {
-    margin: 0;
+h1 {
+  font-size: 2em;
+  margin: 0;
 }
 
-/* メインセクション */
-main {
-    padding: 20px;
+.staff-section {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
 }
 
-/* 役員紹介セクション */
-.executive-profile h2 {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 30px;
+.staff {
+  margin-bottom: 30px;
 }
 
-.profiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
-/* プロフィールのスタイル */
-.profile {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    width: 250px;
-    text-align: center;
-    overflow: hidden;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 100%;
+  overflow: hidden;  /* はみ出しを防止 */
 }
 
-.profile-photo {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #f1f1f1;
+.text {
+  flex: 2;
+  min-width: 200px;
 }
 
-.profile-info {
-    padding: 15px;
+.photo {
+  flex: 1;
+  max-width: 200px;     /* 画像が大きくなりすぎないように */
 }
 
-.profile-info h3 {
-    font-size: 1.4em;
-    color: #917835;
-    margin: 10px 0;
+.photo img {
+  width: 100%;
+  height: auto;          /* アスペクト比を保って自然な高さに */
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.position {
+/* 挨拶文のスタイル */
+.greeting {
     font-size: 1.1em;
-    color: #888;
-    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 40px;
+    padding: 30px;
 }
 
-.bio {
-    font-size: 1em;
-    color: #000000;
+.greeting p {
+    margin-bottom: 20px;
+}
+
+.greeting .quote {
+    font-style: italic;
+    color: #917835; /* 名言の文字色を #917835 に設定 */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.3em;
+}
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo {
+    max-width: 150px;
+    margin: 0 auto;
+  }
 }
 
 /* フッター */
