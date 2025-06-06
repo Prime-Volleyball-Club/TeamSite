@@ -152,7 +152,7 @@
                 document.getElementById('loginPrompt').style.display = 'none';
 
                 // 🔽 サインイン済みなら「サインアウト」に変更
-                const authLink = document.getElementById('authLink');
+                const authLink = document.querySelectorAll('authLink');
                 if (authLink) {
                     authLink.textContent = 'サインアウト';
                     authLink.href = '#';
@@ -175,7 +175,7 @@
                 document.getElementById('loginPrompt').style.display = 'block';
 
                 // 🔽 サインインしていないなら「サインイン」リンクに戻す
-                const authLink = document.getElementById('authLink');
+                const authLink = document.querySelectorAll('authLink');
                 if (authLink) {
                     authLink.textContent = 'サインイン';
                     authLink.href = 'サインイン.html?redirect=' + encodeURIComponent(window.location.pathname);
