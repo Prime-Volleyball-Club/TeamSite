@@ -1,117 +1,195 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サインイン</title>
-    <style>
-        .terms-box {
-            border: 2px solid #333; /* 枠線 */
-            padding: 20px; /* 内側の余白 */
-            margin: 20px auto; /* 上下の余白と中央揃え */
-            width: 80%; /* 幅の指定 */
-            background-color: #f9f9f9; /* 背景色 */
-            border-radius: 8px; /* 角を丸く */
-            text-align: left; /* テキストを左揃え */
-            max-height: 500px; /* 高さの制限 */
-            overflow-y: scroll; /* 内容が多い場合にスクロール */
-        }
-    </style>
-    <link rel="icon" href="favicon.ico">
-</head>
-<body>
-    <h2 style="text-align: center; font-size: 20px; margin-top: 50px;">サインイン</h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>サインイン</title>
+        <style>
+            .terms-box {
+                border: 2px solid #333; /* 枠線 */
+                padding: 20px; /* 内側の余白 */
+                margin: 20px auto; /* 上下の余白と中央揃え */
+                width: 80%; /* 幅の指定 */
+                background-color: #f9f9f9; /* 背景色 */
+                border-radius: 8px; /* 角を丸く */
+                text-align: left; /* テキストを左揃え */
+                max-height: 500px; /* 高さの制限 */
+                overflow-y: scroll; /* 内容が多い場合にスクロール */
+            }
+        </style>
+        <link rel="icon" href="favicon.ico">
+    </head>
+    <body>
+        <h2 style="text-align: center; font-size: 20px; margin-top: 50px;">サインイン</h2>
 
-    <!-- 利用規約の枠 -->
-    <div class="terms-box">
-        <h3>【利用規約】</h3>
-        <br>
-        <h4>第1条（適用範囲）</h4>
-            <p>　本規約は、Primeバレーボールクラブ（以下「当クラブ」）が運営するバレーボールクラブのウェブサイト（以下「本サイト」）を利用するすべてのユーザー（以下「利用者」）に適用されます。</p>
-        <br>
-        <h4>第2条（定義）</h4>
-            <ol>
-                <li>本サイト：当クラブの公式ウェブサイトおよびその関連サービスを指します。</li>
-                <li>利用者：本サイトを訪問し、利用するすべての個人または団体を指します。</li>
-            </ol>
-        <br>
-        <h4>第3条（利用者の義務）</h4>
-            <ol>
-                <li>利用者は、本サイトを通じて当クラブが提供するサービスを利用する際、法令および本規約を遵守するものとします。</li>
-                <li>利用者は、当クラブが提供するコンテンツやサービスを不正に使用してはならず、他の利用者や第三者の権利を侵害してはなりません。</li>
-            </ol>
-        <br>
-        <h4>第4条（禁止事項）</h4>
-            <p>　利用者は、以下の行為を行ってはなりません：</p>
-            <ol>
-                <li>本サイトの内容を不正にコピー、転載、改変すること。</li>
-                <li>他の利用者や第三者を誹謗中傷すること、または名誉を毀損すること。</li>
-                <li>本サイトの運営を妨げる行為や、サーバーに過度な負荷をかける行為。</li>
-                <li>他の利用者の個人情報を不正に取得すること。</li>
-            </ol>
-        <br>
-        <h4>第5条（サービスの変更・停止）</h4>
-            <ol>
-                <li>当クラブは、予告なく本サイトの内容を変更、追加、削除、または一時的に停止することがあります。</li>
-                <li>当クラブは、本サイトのサービス提供に関して、利用者に事前に通知する義務を負いません。</li>
-            </ol>
-        <br>
-        <h4>第6条（著作権）</h4>
-            <ol>
-                <li>本サイトに掲載されているすべてのコンテンツ（画像、文章、動画、ロゴなど）の著作権は、当クラブまたは正当な権利者に帰属します。</li>
-                <li>利用者は、当クラブの許可なく本サイトのコンテンツを商業的に利用することはできません。</li>
-            </ol>
-        <br>
-        <h4>第7条（免責事項）</h4>
-            <ol>
-                <li>当クラブは、本サイトの利用に関連して発生した損害について、一切の責任を負いません。</li>
-                <li>本サイトのコンテンツは、正確性や完全性を保証するものではなく、情報の使用にあたっては利用者の自己責任で行ってください。</li>
-            </ol>
-        <br>
-        <h4>第8条（個人情報の取り扱い）</h4>
-            <ol>
-                <li>当クラブは、利用者から収集した個人情報を<a href="https://prime-volleyball-club.github.io/TeamSite/rule#privacy">プライバシーポリシー</a>に従って適切に取り扱います。</li>
-                <li>本サイトの利用に際して、個人情報を提供する場合は、<a href="https://prime-volleyball-club.github.io/TeamSite/rule#privacy">プライバシーポリシー</a>を必ずご確認ください。</li>
-            </ol>
-        <br>
-        <h4>第9条（規約の変更）</h4>
-            <p>　当クラブは、予告なく本規約を変更することがあります。変更後の規約は、本サイトに掲示された時点で効力を生じます。</p>
-        <br>
-        <h4>第10条（準拠法および管轄裁判所）</h4>
-            <p>　本規約は、日本法に基づいて解釈されます。本サイトの利用に関連するすべての紛争については、名古屋地方裁判所もしくは田原市簡易裁判所の裁判所を専属的な管轄裁判所とします。</p>
-        <br>
-        <h4>第11条（お問い合わせ先）</h4>
-            <p>　本サイトに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
-            <ul>
-                <li>Primeバレーボールクラブ</li>
-                <li>林 知悦</li>
-                <li>volleyballclub.prime@gmail.com</li>
-            </ul>
-    </div>
+        <!-- 利用規約の枠 -->
+        <div class="terms-box">
+            <h3>【利用規約】</h3>
+            <br>
+            <h4>第1条（適用範囲）</h4>
+                <p>　本規約は、Primeバレーボールクラブ（以下「当クラブ」）が運営するバレーボールクラブのウェブサイト（以下「本サイト」）を利用するすべてのユーザー（以下「利用者」）に適用されます。</p>
+            <br>
+            <h4>第2条（定義）</h4>
+                <ol>
+                    <li>本サイト：当クラブの公式ウェブサイトおよびその関連サービスを指します。</li>
+                    <li>利用者：本サイトを訪問し、利用するすべての個人または団体を指します。</li>
+                </ol>
+            <br>
+            <h4>第3条（利用者の義務）</h4>
+                <ol>
+                    <li>利用者は、本サイトを通じて当クラブが提供するサービスを利用する際、法令および本規約を遵守するものとします。</li>
+                    <li>利用者は、当クラブが提供するコンテンツやサービスを不正に使用してはならず、他の利用者や第三者の権利を侵害してはなりません。</li>
+                </ol>
+            <br>
+            <h4>第4条（禁止事項）</h4>
+                <p>　利用者は、以下の行為を行ってはなりません：</p>
+                <ol>
+                    <li>本サイトの内容を不正にコピー、転載、改変すること。</li>
+                    <li>他の利用者や第三者を誹謗中傷すること、または名誉を毀損すること。</li>
+                    <li>本サイトの運営を妨げる行為や、サーバーに過度な負荷をかける行為。</li>
+                    <li>他の利用者の個人情報を不正に取得すること。</li>
+                </ol>
+            <br>
+            <h4>第5条（サービスの変更・停止）</h4>
+                <ol>
+                    <li>当クラブは、予告なく本サイトの内容を変更、追加、削除、または一時的に停止することがあります。</li>
+                    <li>当クラブは、本サイトのサービス提供に関して、利用者に事前に通知する義務を負いません。</li>
+                </ol>
+            <br>
+            <h4>第6条（著作権）</h4>
+                <ol>
+                    <li>本サイトに掲載されているすべてのコンテンツ（画像、文章、動画、ロゴなど）の著作権は、当クラブまたは正当な権利者に帰属します。</li>
+                    <li>利用者は、当クラブの許可なく本サイトのコンテンツを商業的に利用することはできません。</li>
+                </ol>
+            <br>
+            <h4>第7条（免責事項）</h4>
+                <ol>
+                    <li>当クラブは、本サイトの利用に関連して発生した損害について、一切の責任を負いません。</li>
+                    <li>本サイトのコンテンツは、正確性や完全性を保証するものではなく、情報の使用にあたっては利用者の自己責任で行ってください。</li>
+                </ol>
+            <br>
+            <h4>第8条（個人情報の取り扱い）</h4>
+                <ol>
+                    <li>当クラブは、利用者から収集した個人情報を<a href="https://prime-volleyball-club.github.io/TeamSite/rule#privacy">プライバシーポリシー</a>に従って適切に取り扱います。</li>
+                    <li>本サイトの利用に際して、個人情報を提供する場合は、<a href="https://prime-volleyball-club.github.io/TeamSite/rule#privacy">プライバシーポリシー</a>を必ずご確認ください。</li>
+                </ol>
+            <br>
+            <h4>第9条（規約の変更）</h4>
+                <p>　当クラブは、予告なく本規約を変更することがあります。変更後の規約は、本サイトに掲示された時点で効力を生じます。</p>
+            <br>
+            <h4>第10条（準拠法および管轄裁判所）</h4>
+                <p>　本規約は、日本法に基づいて解釈されます。本サイトの利用に関連するすべての紛争については、名古屋地方裁判所もしくは田原市簡易裁判所の裁判所を専属的な管轄裁判所とします。</p>
+            <br>
+            <h4>第11条（お問い合わせ先）</h4>
+                <p>　本サイトに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
+                <ul>
+                    <li>Primeバレーボールクラブ</li>
+                    <li>林 知悦</li>
+                    <li>volleyballclub.prime@gmail.com</li>
+                </ul>
+        </div>
 
-    <!-- 利用規約チェックボックス -->
-    <div style="text-align: center; margin-top: 20px;">
-        <input type="checkbox" id="terms" required>
-        <label for="terms">利用規約に同意する</label>
-    </div>
+        <!-- 利用規約チェックボックス -->
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">利用規約に同意する</label>
+        </div>
 
-    <!-- サインインフォーム -->
-    <form id="loginForm" style="text-align: center; margin-top: 20px;">
-        <input type="email" id="email" placeholder="Email" required><br>
-        <input type="password" id="password" placeholder="Password" required><br>
-        <button type="submit">サインイン</button>
-    </form>
+        <!-- サインインフォーム -->
+        <form id="loginForm" style="text-align: center; margin-top: 20px;">
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">サインイン</button>
+        </form>
 
-    <!-- JavaScript -->
+        <!-- JavaScript -->
+        <script type="module">
+            // サインインフォームの送信処理
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                // チェックボックスが選択されているかを確認
+                if (!document.getElementById('terms').checked) {
+                    event.preventDefault();  // フォーム送信を防止
+                }
+            });
+        </script>
+        <script type="module" src="app.js"></script>
+    </body>
+    <footer class="foot">
+        <div class="md-flex md-justify-between">
+            <a href="https://prime-volleyball-club.github.io/TeamSite/" class="footer__logo">
+            <h1 style="font-family: 'Monotype Corsiva'; color: #917835;">Prime<br>Volleyball Club</h1>
+            </a>
+            <div class="grid">
+                <div>
+                    <p class="footer__navi-heading">Information</p>
+                    <ul class="footer__navi">
+                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/Staff">クラブ紹介</a></li>
+                    <li><a href="#">活動方針</a></li>
+                    <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/#Day">練習日程</a></li>
+                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/web-rule">サイト利用規約</a></li>
+                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/privacy-policy">プライバシーポリシー</a></li>
+                    <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/club-rule">クラブ規則</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer__navi-heading">SNS</p>
+                    <ul class="footer__navi">
+                        <li><a href="https://www.instagram.com/prime_volleyball_club?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer__navi-heading">関連サイト</p>
+                    <ul class="footer__navi">
+                        <li><a href="https://www.jva.or.jp/" target="_blank">日本バレーボール協会</a></li>
+                        <li><a href="https://jvamrs.jp/" target="_blank">JVA MRS</a></li>
+                        <li><a href="https://www.aichi-va.gr.jp/" target="_blank">愛知県バレーボール協会</a></li>
+                        <li><a href="https://www.japan-sports.or.jp/" target="_blank">日本スポーツ協会</a></li>
+                        <li><a href="https://www.aichi-sports.or.jp/index.html" target="_blank">愛知県スポーツ少年団</a></li>
+                        <li><a href="https://sites.google.com/view/momihogusi-kaba/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank">もみほぐし　かば</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <p class="copyright">©2024 Prime Volleyball Club All Rights Reserved</p>
+    </footer>
+
+    <!-- Firebase 認証スクリプト -->
     <script type="module">
-        // サインインフォームの送信処理
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            // チェックボックスが選択されているかを確認
-            if (!document.getElementById('terms').checked) {
-                event.preventDefault();  // フォーム送信を防止
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+        // Firebase設定
+        const firebaseConfig = {
+            apiKey: "AIzaSyAhi_UbbyiWH1GA5r1FIGdi4FTln-HeXMM",
+            authDomain: "prime-volleyball-club.firebaseapp.com",
+            projectId: "prime-volleyball-club",
+            storageBucket: "prime-volleyball-club.appspot.com",
+            messagingSenderId: "952933532179",
+            appId: "1:952933532179:web:022fa7e040bffa2b3735e6",
+            measurementId: "G-GY1566PD0Z"
+        };
+
+        // Firebase初期化
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // 限定リンク取得
+        const protectedLinks = document.querySelectorAll(".protectedLink");
+
+        // 認証状態の監視
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // ログイン済み：リンク表示
+                protectedLinks.forEach(link => {
+                    link.style.display = 'list-item';
+                });
+            } else {
+                // 未ログイン：リンク非表示
+                protectedLinks.forEach(link => {
+                    link.style.display = 'none';
+                });
             }
         });
     </script>
-    <script type="module" src="app.js"></script>
-</body>
 </html>
