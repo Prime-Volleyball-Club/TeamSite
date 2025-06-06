@@ -142,47 +142,38 @@
         const protectedLinks = document.querySelectorAll(".protectedLink");
         const protectedContent = document.getElementById("protectedContent");
         const loginPrompt = document.getElementById("loginPrompt");
-        const authLink = document.querySelectorAll("authLink");
+        const authLinks = document.querySelectorAll(".authLink");
 
         onAuthStateChanged(auth, (user) => {
-            const protectedLink = document.getElementById('protectedLink'); // 🔽 追加
-
             if (user) {
-                document.getElementById('protectedContent').style.display = 'block';
-                document.getElementById('loginPrompt').style.display = 'none';
+                protectedContent.style.display = 'block';
+                loginPrompt.style.display = 'none';
 
-                // 🔽 サインイン済みなら「サインアウト」に変更
-                const authLink = document.querySelectorAll('authLink');
-                if (authLink) {
-                    authLink.textContent = 'サインアウト';
-                    authLink.href = '#';
-                    authLink.addEventListener('click', (e) => {
+                authLinks.forEach(link => {
+                    link.textContent = 'サインアウト';
+                    link.href = '#';
+                    link.addEventListener('click', (e) => {
                         e.preventDefault();
                         signOut(auth).then(() => {
                             alert("サインアウトしました");
-                            location.reload(); // ログアウト後にページ再読み込み
+                            location.reload();
                         });
                     });
-                }
+                });
 
-                // 🔽 メンバー限定リンクを表示
-                //if (protectedLink) protectedLink.style.display = 'list-item'; // 🔽 追加
                 protectedLinks.forEach(link => {
                     link.style.display = 'list-item';
                 });
 
             } else {
-                document.getElementById('loginPrompt').style.display = 'block';
+                loginPrompt.style.display = 'block';
 
-                // 🔽 サインインしていないなら「サインイン」リンクに戻す
-                const authLink = document.querySelectorAll('authLink');
-                if (authLink) {
-                    authLink.textContent = 'サインイン';
-                    authLink.href = 'サインイン.html?redirect=' + encodeURIComponent(window.location.pathname);
-                }
+                authLinks.forEach(link => {
+                    link.textContent = 'サインイン';
+                    link.href = 'サインイン.html?redirect=' + encodeURIComponent(window.location.pathname);
+                    link.onclick = null;
+                });
 
-                // 🔽 メンバー限定リンクを非表示
-                //if (protectedLink) protectedLink.style.display = 'none'; // 🔽 追加
                 protectedLinks.forEach(link => {
                     link.style.display = 'none';
                 });
@@ -197,7 +188,6 @@
                 });
             });
         }
-    </script>
+        </script>
     <script type="text/javascript" src=script.js></script>
-
 </html>
