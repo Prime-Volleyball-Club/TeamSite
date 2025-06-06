@@ -13,7 +13,7 @@
                 background-color: #f9f9f9; /* 背景色 */
                 border-radius: 8px; /* 角を丸く */
                 text-align: left; /* テキストを左揃え */
-                max-height: 500px; /* 高さの制限 */
+                max-height: 400px; /* 高さの制限 */
                 overflow-y: scroll; /* 内容が多い場合にスクロール */
             }
         </style>
@@ -130,12 +130,12 @@
                 <div>
                     <p class="footer__navi-heading">Information</p>
                     <ul class="footer__navi">
-                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/Staff">クラブ紹介</a></li>
-                    <li><a href="#">活動方針</a></li>
-                    <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/#Day">練習日程</a></li>
-                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/web-rule">サイト利用規約</a></li>
-                    <li><a href="https://prime-volleyball-club.github.io/TeamSite/privacy-policy">プライバシーポリシー</a></li>
-                    <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/club-rule">クラブ規則</a></li>
+                        <li><a href="https://prime-volleyball-club.github.io/TeamSite/Staff">クラブ紹介</a></li>
+                        <li><a href="#">活動方針</a></li>
+                        <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/#Day">練習日程</a></li>
+                        <li><a href="https://prime-volleyball-club.github.io/TeamSite/web-rule">サイト利用規約</a></li>
+                        <li><a href="https://prime-volleyball-club.github.io/TeamSite/privacy-policy">プライバシーポリシー</a></li>
+                        <li class="protectedLink" style="display: none;"><!-- ログインユーザー限定コンテンツ --><a href="https://prime-volleyball-club.github.io/TeamSite/club-rule">クラブ規則</a></li>
                     </ul>
                 </div>
                 <div>
@@ -177,9 +177,9 @@
             measurementId: "G-GY1566PD0Z"
         };
 
-        // Firebase初期化
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+        // すでに初期化されているAppを取得
+        const app = getApps().length > 0 ? getApp() : null;
+        const auth = app ? getAuth(app) : null;
 
         // 限定リンク取得
         const protectedLinks = document.querySelectorAll(".protectedLink");
